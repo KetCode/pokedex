@@ -1,0 +1,363 @@
+.pokemons {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.normal {
+    background-color: var(--normal);
+}
+
+.grass {
+    background-color: var(--grass);
+}
+
+.fire {
+    background-color: var(--fire);
+}
+
+.water {
+    background-color: var(--water);
+}
+
+.electric {
+    background-color: var(--electric);
+}
+
+.ice {
+    background-color: var(--ice);
+}
+
+.ground {
+    background-color: var(--ground);
+}
+
+.flying {
+    background-color: var(--flying);
+}
+
+.poison {
+    background-color: var(--poison);
+}
+
+.fighting {
+    background-color: var(--fighting);
+}
+
+.psychic {
+    background-color: var(--psychic);
+}
+
+.dark {
+    background-color: var(--dark);
+}
+
+.rock {
+    background-color: var(--rock);
+}
+
+.bug {
+    background-color: var(--bug);
+}
+
+.ghost {
+    background-color: var(--ghost);
+}
+
+.steel {
+    background-color: var(--steel);
+}
+
+.dragon {
+    background-color: var(--dragon);
+}
+
+.fairy {
+    background-color: var(--fairy);
+}
+
+.pokemon {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.pokemon .number {
+    color: #000;
+    opacity: .3;
+    text-align: right;
+    font-size: .625rem;
+}
+
+.pokemon .name {
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: .25rem;
+}
+
+.pokemon .detail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pokemon .detail .types {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.pokemon .detail .types .type {
+    color: #fff;
+    padding: .25rem .5rem;
+    margin: .25rem 0;
+    font-size: .625rem;
+    border-radius: 1rem;
+    filter: brightness(1.05);
+    text-align: center;
+    border-style: inset;
+}
+
+.pokemon .detail img {
+    max-width: 100%;
+    height: 70px;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.pagination button {
+    padding: .25rem .5rem;
+    margin: .25rem 0;
+    font-size: .625rem;
+    color: #fff;
+    background-color: #6c79db;
+    border: none;
+    border-radius: 1rem;
+}
+
+@media screen and (min-width: 380px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+/* details page */
+
+.detail-main .header {
+    padding: 20px 20px 24px 20px;
+}
+
+.detail-main .header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 15px;
+}
+  
+.detail-main .header-wrap {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+  
+.detail-main .back {
+    max-height: 32px;
+}
+
+.detail-main .back path,
+.detail-main .header-wrapper p,
+.detail-main .header-wrapper h1 {
+    fill: var(--grayscale-white);
+    color: var(--grayscale-white);
+}
+
+.detail-main .pokemon-id {
+    font-weight: var(--font-weight-bold);
+}
+
+.detail-img {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    position: relative;
+    z-index: 3;
+}
+  
+.detail-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.detail-card {
+    border-radius: 8px;
+    background-color: var(--grayscale-white);
+    box-shadow: var(--drop-shadow-inner);
+    padding: 56px 20px 20px 20px;
+    margin-top: -50px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+.power {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+  
+.power > p {
+    border-radius: 1rem;
+    padding: .25rem .5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--grayscale-white);
+    text-transform: capitalize;
+}
+
+.pokemon-detail.move p {
+    text-transform: capitalize;
+    word-break: break-all;
+}
+  
+.detail-card .about-text {
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+}
+  
+.pokemon-detail-wrapper {
+    display: flex;
+    align-items: flex-end;
+}
+  
+.pokemon-detail-wrapper .pokemon-detail-wrap {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+  
+.pokemon-detail-wrap:before {
+    content: "";
+    background-color: var(--grayscale-light);
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+  
+.pokemon-detail-wrap:last-child::before {
+    display: none;
+}
+  
+.pokemon-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    gap: 8px;
+}
+  
+.pokemon-detail-wrapper {
+    min-height: 76px;
+}
+  
+.pokemon-detail.move {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    padding: 8px 5px;
+}
+  
+.pokemon-detail-wrap > .caption-fonts {
+    color: var(--grayscale-medium);
+}
+  
+.pokemon-detail-wrap .straighten {
+    transform: rotate(90deg);
+}
+  
+.detail-card .pokemon-description {
+    color: var(--grayscale-dark);
+    text-align: center;
+}
+  
+.stats-wrap {
+    display: flex;
+    align-items: center;
+}
+  
+.stats-wrap p {
+    color: var(--grayscale-dark);
+    margin-right: 8px;
+    min-width: 19px;
+}
+  
+.stats-wrap p.stats {
+    text-align: right;
+    padding-right: 8px;
+    min-width: 35px;
+    border-right: 1px solid var(--grayscale-light);
+    font-weight: var(--font-weight-bold);
+}
+
+.stats-wrap .progress-bar {
+    flex: 1;
+    border-radius: 4px;
+    height: 10px;
+}
+  
+.stats-wrap .progress-bar::-webkit-progress-bar,
+.stats-wrap .progress-bar::-webkit-progress-value {
+    border-radius: 4px;
+}
+  
+.detail-bg {
+    position: absolute;
+    z-index: 1;
+    right: 8px;
+    top: 8px;
+    opacity: 0.1;
+    width: 13rem;
+}
+  
+.detail-bg path {
+    fill: var(--grayscale-white);
+}
+
+.featured-img {
+    position: relative;
+}
+  
+.detail-main.main {
+    height: max-content;
+    border-color: transparent;
+    background-color: transparent;
+}

@@ -1,0 +1,89 @@
+:root {  
+    --headline-font-size: 24px;
+    --body3-font-size: 10px;
+    --caption-font-size: 8px;
+    --caption-line-height: 12px;
+    
+    --font-weight-bold: 700;
+  
+    --drop-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+    --drop-shadow-inner: 0px 1px 3px 1px rgba(0, 0, 0, 0.25) inset;
+
+    --grayscale-dark: #212121;
+    --grayscale-medium: #666666;
+    --grayscale-light: #e0e0e0;
+    --grayscale-white: #ffffff;
+
+    --grayscale-dark: #212121;
+    --normal: #a6a877;
+    --grass: #77c850;
+    --fire: #ee7f30;
+    --water: #678fee;
+    --electric: #f7cf2e;
+    --ice: #98d5d7;
+    --ground: #dfbf69;
+    --flying: #a98ff0;
+    --poison: #a040a0;
+    --fighting: #bf3029;
+    --psychic: #f65687;
+    --dark: #725847;
+    --rock: #b8a137;
+    --bug: #a8b720;
+    --ghost: #6e5896;
+    --steel: #b9b7cf;
+    --dragon: #6f38f6;
+    --fairy: #f9aec7;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f6f8fc;
+    font-family: "Roboto", sans-serif;
+}
+
+.content {
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;
+    background-color: #fff;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo > img {
+    width: 26px;
+    height: 26px;
+    margin-right: 16px;
+}
+
+.body3-fonts {
+    font-size: var(--body3-font-size);
+}
+
+.caption-fonts {
+    font-size: var(--caption-font-size);
+    line-height: var(--caption-line-height);
+}
+
+@media screen and (min-width: 992px) {
+    .content {
+        max-width: 992px;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 1rem;
+    }
+}

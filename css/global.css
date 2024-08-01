@@ -72,6 +72,7 @@ body {
 
 .body3-fonts {
     font-size: var(--body3-font-size);
+    font-size: .75rem;
 }
 
 .caption-fonts {

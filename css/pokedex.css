@@ -251,6 +251,7 @@
     font-weight: var(--font-weight-bold);
     color: var(--grayscale-white);
     text-transform: capitalize;
+    font-size: .70rem;
 }
 
 .pokemon-detail.move p {
@@ -261,6 +262,7 @@
 .detail-card .about-text {
     font-weight: var(--font-weight-bold);
     text-align: center;
+    font-size: 1.2rem;
 }
   
 .pokemon-detail-wrapper {
@@ -311,6 +313,7 @@
   
 .pokemon-detail-wrap > .caption-fonts {
     color: var(--grayscale-medium);
+    font-size: 0.85rem;
 }
   
 .pokemon-detail-wrap .straighten {
@@ -320,6 +323,7 @@
 .detail-card .pokemon-description {
     color: var(--grayscale-dark);
     text-align: center;
+    font-size: 0.85rem;
 }
   
 .stats-wrap {
@@ -334,9 +338,9 @@
 }
   
 .stats-wrap p.stats {
-    text-align: right;
+    text-align: left;
     padding-right: 8px;
-    min-width: 35px;
+    min-width: 51px;
     border-right: 1px solid var(--grayscale-light);
     font-weight: var(--font-weight-bold);
 }

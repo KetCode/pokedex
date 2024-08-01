@@ -229,7 +229,7 @@
 .detail-card {
     border-radius: 8px;
     background-color: var(--grayscale-white);
-    box-shadow: var(--drop-shadow-inner);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 56px 20px 20px 20px;
     margin-top: -50px;
     display: flex;

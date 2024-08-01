@@ -190,12 +190,7 @@
     align-items: center;
     justify-content: space-between;
     column-gap: 15px;
-}
-  
-.detail-main .header-wrap {
-    display: flex;
-    align-items: center;
-    column-gap: 8px;
+    width: 38rem;
 }
   
 .detail-main .back {

@@ -70,6 +70,9 @@ function setTypeBackgroundColor(poke) {
     setElementStyles(document.querySelectorAll(".stats-wrap p.stats"), "color", color);
     setElementStyles(document.querySelectorAll(".stats-wrap .progress-bar"), "color", color);
 
+    const bodyElement = document.querySelector("body");
+    setElementStyles([bodyElement], "backgroundColor", color);
+
     const rgbaColor = rgbaFromHex(color);
     const styleTag = document.createElement("style");
     styleTag.innerHTML = `.stats-wrap .progress-bar::-webkit-progress-bar {

@@ -78,6 +78,39 @@
     background-color: var(--fairy);
 }
 
+.home-header {
+    display: ruby-text;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container {
+    flex-grow: 1;
+    padding: .7rem;
+    background-color: #f6f8fc;
+    border-radius: .75rem;
+}
+
+#search-input {
+    border: none;
+    outline: none;
+    color: #848484; /* Cor do texto */
+    background-color: #f6f8fc;
+    font-size: 1rem;
+}
+
+#search-input::placeholder {
+    color: #adb5bd; /* Cor do placeholder */
+}
+
+.search-icon {
+    height: 1.5rem;
+    padding-right: .5rem;
+}
+
 .pokemon {
     display: flex;
     flex-direction: column;

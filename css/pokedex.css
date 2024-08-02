@@ -148,16 +148,15 @@
     padding: .5rem 1rem;
     margin: .5rem;
     font-size: .75rem;
-    color: #fff;
-    background-color: #6c79db;
-    border: none;
+    color: #484848;
+    background-color: #f6f8fc;
     border-radius: 1rem;
     box-shadow: var(--drop-shadow-new);
     transition: background-color 0.2s ease-in-out;
 }
 
 .pagination button:hover {
-    background-color: #5a67d8;
+    background-color: #c9c9c9;
 }
 
 @media screen and (min-width: 380px) {

@@ -234,6 +234,7 @@
 .detail-main .header-wrapper h1 {
     fill: var(--grayscale-white);
     color: var(--grayscale-white);
+    text-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.2);
 }
 
 .detail-main .pokemon-id {

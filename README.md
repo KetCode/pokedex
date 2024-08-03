@@ -1,1 +1,57 @@
-# Trilha JS Developer - Pokedex
+<h1 align="center"> Pokedex </h1>
+
+<p align="center"> Uma pokedex para ver seus pokemons favoritos! </p>
+
+
+<p align="center"> 
+    <a href="#-sobre-o-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;
+    <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;
+    <a href="#-features">Features</a>&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;
+    <a href="#-licença">Licença</a>&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;
+    <a href="#-dicas-para-usar-o-projeto">Dicas de uso</a>
+</p>
+
+<p align="center"> 
+    <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+</p>
+
+<br>
+
+<p align="center"> 
+    <img alt="Thumbnail Pokedex" src=".github/preview.png" width="100%">
+</p>
+
+### 💻 Sobre o projeto
+
+O projeto é um site para mostrar todos os pokemons.
+
+Tem como objetivo a utilização como pokedex e conseguir visualizar e pesquisar os pokemons existentes. Contem os status detalhados para cada criatura quando clica no card ou pesquisa na busca. Total de 649 pokemons.
+
+### 🚀 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- HTML
+- CSS
+- Javascript
+- Git e Github
+
+### 🚧 Features
+
+- [x] Tela inicial mostrando a lista de pokemon pela api
+- [x] Tela de detalhes de cada pokemon
+- [x] Utilizar a api
+- [ ] Conseguir pesquisar os pokemons
+- [ ] Fazer a pesquisa em tempo real com uma lista de sugestões dos nomes de pokemons 
+
+### 📜 Licença
+
+Esse projeto está sob a licença MIT.
+
+### 💡 Dicas para usar o projeto
+
+Para conseguir visualizar a pagina é necessário utilizar a extensão "live server" pelo vscode.
+
+---
+
+Projeto feito através de uma aula da rocketseat. Alterado e adicionado algumas funcionalidades por KetCode.

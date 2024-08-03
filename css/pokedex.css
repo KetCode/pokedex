@@ -222,7 +222,6 @@
     align-items: center;
     justify-content: space-between;
     column-gap: 15px;
-    width: 38rem;
 }
   
 .detail-main .back {
@@ -405,4 +404,19 @@
     height: max-content;
     border-color: transparent;
     background-color: transparent;
+}
+
+@media screen and (min-width: 650px) {
+    .detail-main .header-wrapper {
+        width: 38rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .detail-card {
+        width: 90%;
+    }
+    .header {
+        width: 90%;
+    }
 }

@@ -2,7 +2,7 @@ let currentPokemonID = null;
 const warningMessages = [];
 
 document.addEventListener("DOMContentLoaded", () => {
-    const MAX_POKEMONS = 151;
+    const MAX_POKEMONS = 649;
     const pokemonID = new URLSearchParams(window.location.search).get("id");
     const id = parseInt(pokemonID, 10);
 

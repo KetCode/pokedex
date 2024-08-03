@@ -40,4 +40,13 @@ pokeApi.getPokemonByName = (name) => {
     return fetch(url)
       .then((response) => response.json())
       .then(convertPokeApiDetailToPokemon);
-  };
+};
+
+pokeApi.searchPokemonsByNames = (name, offset = 0, limit = 649) => {
+    return fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`)
+    .then((response) => response.json())
+    .then((data) => {
+        const pokemons = data.results.filter((pokemon) => pokemon.name.includes(name));
+        return pokemons;
+    });
+};

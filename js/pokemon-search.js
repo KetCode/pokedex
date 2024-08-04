@@ -5,12 +5,12 @@ let debounceTimeout = null;
 searchInput.addEventListener('input', () => {
   const pokemonName = searchInput.value.trim(); // trim metodo que remove espaços entre ambos (inicio e fim) | It removes any whitespace characters (spaces, tabs, line breaks, etc.) from the start and end of the string
   
-  if (pokemonName.length >= 3) {
+  if (pokemonName.length >= 2) {
     clearTimeout(debounceTimeout); // Prevent a function from running multiple times and Cancel a timer that is no longer needed
     debounceTimeout = setTimeout(() => {
       pokeApi.searchPokemonsByNames(pokemonName)
         .then((pokemons) => {
-          const suggestions = pokemons.map((pokemon) => pokemon.name);
+          const suggestions = pokemons.filter((pokemon) => pokemon.name.startsWith(pokemonName)).map((pokemon) => pokemon.name);
           suggestionsList.textContent = '';
           if (suggestions.length === 0) {
             const noResultsElement = document.createElement('li');

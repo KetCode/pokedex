@@ -107,7 +107,8 @@
 }
 
 #search-input::placeholder {
-    color: #adb5bd; /* Cor do placeholder */
+    color: #adb5bd;
+    font-size: .85rem;
 }
 
 .search-icon {

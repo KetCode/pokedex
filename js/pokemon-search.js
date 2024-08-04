@@ -11,7 +11,7 @@ searchInput.addEventListener('input', () => {
       pokeApi.searchPokemonsByNames(pokemonName)
         .then((pokemons) => {
           const suggestions = pokemons.map((pokemon) => pokemon.name);
-          suggestionsList.innerHTML = '';
+          suggestionsList.textContent = '';
           if (suggestions.length === 0) {
             const noResultsElement = document.createElement('li');
             noResultsElement.textContent = 'No results found';
@@ -30,6 +30,6 @@ searchInput.addEventListener('input', () => {
     }, 500);
   } else {
     clearTimeout(debounceTimeout);
-    suggestionsList.innerHTML = '';
+    suggestionsList.textContent = '';
   }
 });

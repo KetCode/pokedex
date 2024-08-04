@@ -12,11 +12,17 @@ searchInput.addEventListener('input', () => {
         .then((pokemons) => {
           const suggestions = pokemons.map((pokemon) => pokemon.name);
           suggestionsList.innerHTML = '';
-          suggestions.forEach((suggestion) => {
-            const suggestionElement = document.createElement('li');
-            suggestionElement.textContent = suggestion;
-            suggestionsList.appendChild(suggestionElement);
-          });
+          if (suggestions.length === 0) {
+            const noResultsElement = document.createElement('li');
+            noResultsElement.textContent = 'No results found';
+            suggestionsList.appendChild(noResultsElement);
+          } else {
+            suggestions.forEach((suggestion) => {
+              const suggestionElement = document.createElement('li');
+              suggestionElement.textContent = suggestion;
+              suggestionsList.appendChild(suggestionElement);
+            });
+          }
         })
         .catch((error) => {
           console.error(error);

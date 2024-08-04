@@ -22,5 +22,8 @@ searchInput.addEventListener('input', () => {
           console.error(error);
         });
     }, 500);
+  } else {
+    clearTimeout(debounceTimeout);
+    suggestionsList.innerHTML = '';
   }
 });

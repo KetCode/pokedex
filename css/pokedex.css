@@ -115,6 +115,37 @@
     height: 1.5rem;
     padding-right: .5rem;
 }
+ 
+#suggestions-list {
+    position: absolute;
+    z-index: 1;
+    background-color: #f6f8fc;
+    padding: 0;
+    width: 15.105rem;
+    margin: -.65rem 0 0 0;
+    border-radius: 0 0 0.75rem 0.75rem;
+}
+
+#suggestions-list li {
+    cursor: pointer;
+    list-style: none;
+
+    padding: 1.25rem 1.25rem 1.25rem 2.8rem;
+    border-radius: 0.75rem;
+    color: #4d4d4d;
+}
+
+#suggestions-list li:first-child:hover {
+    border-radius: 0 0 0.75rem 0.75rem;
+}
+
+#suggestions-list li:hover {
+    background-color: #E5E7EA;
+}
+
+#search-input:focus + #suggestions-list {
+    display: block;
+}
 
 .pokemon {
     display: flex;

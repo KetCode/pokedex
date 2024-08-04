@@ -82,6 +82,10 @@
     display: ruby-text;
 }
 
+.search {
+    width: 15.105rem;
+}
+
 .search-container {
     display: flex;
     align-items: center;
@@ -97,7 +101,7 @@
 #search-input {
     border: none;
     outline: none;
-    color: #848484; /* Cor do texto */
+    color: #4d4d4d;
     background-color: #f6f8fc;
     font-size: 1rem;
 }

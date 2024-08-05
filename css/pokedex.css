@@ -79,7 +79,10 @@
 }
 
 .home-header {
-    display: ruby;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .94rem;
 }
 
 .search {
@@ -250,6 +253,20 @@
 @media screen and (min-width: 992px) {
     .pokemons {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .logo h1 {
+        font-size: 24px
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .home-header {
+        display: grid;
+        place-items: center;
+        justify-content: center;
     }
 }
 

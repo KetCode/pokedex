@@ -6,7 +6,7 @@ suggestionsList.style.overflowY = 'auto';
 suggestionsList.style.maxHeight = '233px';
 
 searchInput.addEventListener('input', () => {
-  const pokemonName = searchInput.value.trim(); // trim metodo que remove espaços entre ambos (inicio e fim) | It removes any whitespace characters (spaces, tabs, line breaks, etc.) from the start and end of the string
+  const pokemonName = searchInput.value.trim().toLowerCase(); // trim metodo que remove espaços entre ambos (inicio e fim) | It removes any whitespace characters (spaces, tabs, line breaks, etc.) from the start and end of the string
   
   if (pokemonName.length >= 2) {
     clearTimeout(debounceTimeout); // Prevent a function from running multiple times and Cancel a timer that is no longer needed

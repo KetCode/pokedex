@@ -27,6 +27,10 @@ O projeto é um site para mostrar todos os pokemons.
 
 Tem como objetivo a utilização como pokedex e conseguir visualizar e pesquisar os pokemons existentes. Contem os status detalhados para cada criatura quando clica no card ou pesquisa na busca. Total de 649 pokemons.
 
+Clique no link abaixo para explorar o projeto completo e descobrir todas as suas funcionalidades:
+
+[![Acesse o Projeto](https://img.shields.io/static/v1?label=Acesse%20o%20Projeto&message=Aqui&color=B20000&labelColor=000000)](https://ourpokedex.netlify.app)
+
 ### 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:

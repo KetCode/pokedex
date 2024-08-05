@@ -2,6 +2,9 @@ const searchInput = document.getElementById('search-input');
 const suggestionsList = document.getElementById('suggestions-list');
 let debounceTimeout = null;
 
+suggestionsList.style.overflowY = 'auto';
+suggestionsList.style.maxHeight = '233px';
+
 searchInput.addEventListener('input', () => {
   const pokemonName = searchInput.value.trim(); // trim metodo que remove espaços entre ambos (inicio e fim) | It removes any whitespace characters (spaces, tabs, line breaks, etc.) from the start and end of the string
   

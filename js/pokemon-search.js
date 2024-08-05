@@ -20,6 +20,18 @@ searchInput.addEventListener('input', () => {
             suggestions.forEach((suggestion) => {
               const suggestionElement = document.createElement('li');
               suggestionElement.textContent = suggestion;
+              suggestionElement.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const pokemonName = suggestion;
+
+                pokeApi.getPokemonByName(pokemonName)
+                  .then((pokemon) => {
+                    window.location.assign(`./detail.html?id=${pokemon.number}`);
+                  })
+                  .catch((error) => {
+                    console.error(error);
+                  });
+              });
               suggestionsList.appendChild(suggestionElement);
             });
           }

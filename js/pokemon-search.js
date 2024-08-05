@@ -47,3 +47,9 @@ searchInput.addEventListener('input', () => {
     suggestionsList.textContent = '';
   }
 });
+
+searchInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+  }
+});

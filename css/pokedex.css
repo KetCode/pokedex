@@ -135,16 +135,23 @@
     color: #4d4d4d;
 }
 
-#suggestions-list li:first-child:hover {
-    border-radius: 0 0 0.75rem 0.75rem;
-}
-
 #suggestions-list li:hover {
     background-color: #E5E7EA;
 }
 
 #search-input:focus + #suggestions-list {
     display: block;
+}
+
+#suggestions-list::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f6f8fc;
+    border-radius: 0 0 0.75rem 0;
+}
+
+#suggestions-list::-webkit-scrollbar-thumb {
+    background-color: #8b8b8b;
+    border-radius: 10px;
 }
 
 .pokemon {

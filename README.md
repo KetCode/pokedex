@@ -41,8 +41,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [x] Tela inicial mostrando a lista de pokemon pela api
 - [x] Tela de detalhes de cada pokemon
 - [x] Utilizar a api
-- [ ] Conseguir pesquisar os pokemons
-- [ ] Fazer a pesquisa em tempo real com uma lista de sugestões dos nomes de pokemons 
+- [x] Ter um campo para pesquisar os pokemons
+- [x] Fazer a pesquisa em tempo real com uma lista de sugestões dos nomes de pokemons 
 
 ### 📜 Licença
 

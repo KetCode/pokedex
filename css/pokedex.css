@@ -432,8 +432,8 @@
 .detail-bg {
     position: absolute;
     z-index: 1;
-    right: 8px;
-    top: 8px;
+    right: 18px;
+    top: 70px;
     opacity: 0.1;
     width: 13rem;
 }
@@ -463,6 +463,6 @@
         width: 90%;
     }
     .header {
-        width: 90%;
+        width: 98%;
     }
 }

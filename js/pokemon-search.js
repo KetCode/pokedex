@@ -7,38 +7,37 @@ searchInput.addEventListener('input', () => {
   
   if (pokemonName.length >= 2) {
     clearTimeout(debounceTimeout); // Prevent a function from running multiple times and Cancel a timer that is no longer needed
-    debounceTimeout = setTimeout(() => {
-      pokeApi.searchPokemonsByNames(pokemonName)
-        .then((pokemons) => {
-          const suggestions = pokemons.filter((pokemon) => pokemon.name.startsWith(pokemonName)).map((pokemon) => pokemon.name);
-          suggestionsList.textContent = '';
-          if (suggestions.length === 0) {
-            const noResultsElement = document.createElement('li');
-            noResultsElement.textContent = 'No results found';
-            suggestionsList.appendChild(noResultsElement);
-          } else {
-            suggestions.forEach((suggestion) => {
-              const suggestionElement = document.createElement('li');
-              suggestionElement.textContent = suggestion;
-              suggestionElement.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const pokemonName = suggestion;
+    debounceTimeout = setTimeout(async () => {
+      try {
+        const pokemons = await pokeApi.searchPokemonsByNames(pokemonName)
+        const suggestions = pokemons.filter((pokemon) => pokemon.name.startsWith(pokemonName)).map((pokemon) => pokemon.name);
+        suggestionsList.textContent = '';
+          
+        if (suggestions.length === 0) {
+          const noResultsElement = document.createElement('li');
+          noResultsElement.textContent = 'Nenhum resultado encontrado';
+          suggestionsList.appendChild(noResultsElement);
+        } else {
+          suggestions.forEach((suggestion) => {
+            const suggestionElement = document.createElement('li');
+            suggestionElement.textContent = suggestion;
 
-                pokeApi.getPokemonByName(pokemonName)
-                  .then((pokemon) => {
-                    window.location.assign(`./detail.html?id=${pokemon.number}`);
-                  })
-                  .catch((error) => {
-                    console.error(error);
-                  });
-              });
-              suggestionsList.appendChild(suggestionElement);
+            suggestionElement.addEventListener('click', async (e) => {
+              e.stopPropagation();
+              
+              try {
+                const pokemon = await pokeApi.getPokemonByName(suggestion);
+                window.location.assign(`./detail.html?id=${pokemon.number}`);
+              } catch(error) {
+                console.error(error);
+              }
             });
-          }
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+            suggestionsList.appendChild(suggestionElement);
+          });
+        }
+      } catch(error) {
+        console.error(error);
+      }
     }, 500);
   } else {
     clearTimeout(debounceTimeout);

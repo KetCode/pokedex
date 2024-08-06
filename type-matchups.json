@@ -1,0 +1,191 @@
+{
+    "types": [
+        {
+            "name": "Fire",
+            "attacking": {
+                "super_effective_against": ["Grass", "Ice", "Bug", "Steel"],
+                "not_very_effective_against": ["Fire", "Water", "Rock", "Dragon"]
+            },
+            "defending": {
+                "weak_against": ["Water", "Rock", "Ground"],
+                "resistant_against": ["Bug", "Steel", "Fire", "Grass", "Ice", "Fairy"]
+            }
+        },
+        {
+            "name": "Water",
+            "attacking": {
+                "super_effective_against": ["Fire", "Ground", "Rock"],
+                "not_very_effective_against": ["Water", "Grass", "Dragon"]
+            },
+            "defending": {
+                "weak_against": ["Electric", "Grass"],
+                "resistant_against": ["Steel", "Fire", "Water", "Ice"]
+            }
+        },
+        {
+            "name": "Electric",
+            "attacking": {
+                "super_effective_against": ["Water", "Flying"],
+                "not_very_effective_against": ["Electric", "Ground", "Dragon"]
+            },
+            "defending": {
+                "weak_against": ["Ground"],
+                "resistant_against": ["Flying", "Steel", "Electric", "Water"]
+            }
+        },
+        {
+            "name": "Grass",
+            "attacking": {
+                "super_effective_against": ["Water", "Ground", "Rock"],
+                "not_very_effective_against": ["Fire", "Grass", "Poison", "Flying", "Bug", "Dragon", "Steel"]
+            },
+            "defending": {
+                "weak_against": ["Fire", "Ice", "Poison", "Flying", "Bug"],
+                "resistant_against": ["Ground", "Water", "Grass", "Electric"]
+            }
+        },
+        {
+            "name": "Ice",
+            "attacking": {
+                "super_effective_against": ["Grass", "Ground", "Flying", "Dragon"],
+                "not_very_effective_against": ["Fire", "Water", "Ice", "Steel"]
+            },
+            "defending": {
+                "weak_against": ["Fire", "Rock", "Steel", "Fighting"],
+                "resistant_against": ["Ice"]
+            }
+        },
+        {
+            "name": "Fighting",
+            "attacking": {
+                "super_effective_against": ["Normal", "Ice", "Rock", "Dark", "Steel"],
+                "not_very_effective_against": ["Poison", "Flying", "Psychic", "Bug", "Fairy"]
+            },
+            "defending": {
+                "weak_against": ["Flying", "Psychic", "Fairy"],
+                "resistant_against": ["Bug", "Rock", "Dark"]
+            }
+        },
+        {
+            "name": "Poison",
+            "attacking": {
+                "super_effective_against": ["Grass", "Fairy"],
+                "not_very_effective_against": ["Poison", "Ground", "Rock", "Ghost"]
+            },
+            "defending": {
+                "weak_against": ["Ground", "Psychic"],
+                "resistant_against": ["Grass", "Fairy", "Fighting", "Poison", "Bug"]
+            }
+        },
+        {
+            "name": "Ground",
+            "attacking": {
+                "super_effective_against": ["Fire", "Electric", "Poison", "Rock", "Steel"],
+                "not_very_effective_against": ["Grass", "Bug"]
+            },
+            "defending": {
+                "weak_against": ["Water", "Ice", "Grass"],
+                "resistant_against": ["Rock", "Poison", "Electric"]
+            }
+        },
+        {
+            "name": "Flying",
+            "attacking": {
+                "super_effective_against": ["Grass", "Fighting", "Bug"],
+                "not_very_effective_against": ["Electric", "Rock", "Steel"]
+            },
+            "defending": {
+                "weak_against": ["Electric", "Rock", "Ice", "Ground"],
+                "resistant_against": ["Grass", "Fighting", "Bug"]
+            }
+        },
+        {
+            "name": "Psychic",
+            "attacking": {
+                "super_effective_against": ["Fighting", "Poison"],
+                "not_very_effective_against": ["Psychic", "Steel"]
+            },
+            "defending": {
+                "weak_against": ["Bug", "Ghost", "Dark"],
+                "resistant_against": ["Fighting", "Psychic"]
+            }
+        },
+        {
+            "name": "Bug",
+            "attacking": {
+                "super_effective_against": ["Grass", "Psychic", "Dark"],
+                "not_very_effective_against": ["Fire", "Fighting", "Poison", "Flying", "Ghost", "Steel", "Fairy"]
+            },
+            "defending": {
+                "weak_against": ["Fire", "Flying", "Rock"],
+                "resistant_against": ["Grass", "Fighting", "Ground"]
+            }
+        },
+        {
+            "name": "Rock",
+            "attacking": {
+                "super_effective_against": ["Fire", "Ice", "Flying", "Bug"],
+                "not_very_effective_against": ["Fighting", "Ground", "Steel"]
+            },
+            "defending": {
+                "weak_against": ["Water", "Grass", "Fighting", "Ground", "Steel"],
+                "resistant_against": ["Normal", "Fire", "Flying", "Poison"]
+            }
+        },
+        {
+            "name": "Ghost",
+            "attacking": {
+                "super_effective_against": ["Psychic", "Ghost"],
+                "not_very_effective_against": ["Dark"]
+            },
+            "defending": {
+                "weak_against": ["Ghost", "Dark"],
+                "resistant_against": ["Bug", "Poison", "Normal", "Fighting"]
+            }
+        },
+        {
+            "name": "Dragon",
+            "attacking": {
+                "super_effective_against": ["Dragon"],
+                "not_very_effective_against": ["Steel"]
+            },
+            "defending": {
+                "weak_against": ["Dragon", "Fairy", "Ice"],
+                "resistant_against": ["Fire", "Water", "Electric", "Grass"]
+            }
+        },
+        {
+            "name": "Dark",
+            "attacking": {
+                "super_effective_against": ["Psychic", "Ghost"],
+                "not_very_effective_against": ["Fighting", "Dark", "Fairy"]
+            },
+            "defending": {
+                "weak_against": ["Fighting", "Bug", "Fairy"],
+                "resistant_against": ["Ghost", "Dark", "Psychic"]
+            }
+        },
+        {
+            "name": "Steel",
+            "attacking": {
+                "super_effective_against": ["Ice", "Rock", "Fairy"],
+                "not_very_effective_against": ["Fire", "Water", "Electric", "Steel"]
+            },
+            "defending": {
+                "weak_against": ["Fire", "Fighting", "Ground"],
+                "resistant_against": ["Bug", "Dragon", "Fairy", "Flying", "Grass", "Ice", "Normal", "Psychic", "Rock", "Steel", "Poison"]
+            }
+        },
+        {
+            "name": "Fairy",
+            "attacking": {
+                "super_effective_against": ["Fighting", "Dragon", "Dark"],
+                "not_very_effective_against": ["Poison", "Steel", "Fire"]
+            },
+            "defending": {
+                "weak_against": ["Poison", "Steel"],
+                "resistant_against": ["Bug", "Dark", "Fighting", "Dragon"]
+            }
+        }
+    ]
+}

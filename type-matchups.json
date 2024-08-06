@@ -1,6 +1,17 @@
 {
     "types": [
         {
+            "name": "Normal",
+            "attacking": {
+                "super_effective_against": [],
+                "not_very_effective_against": [ "Rock", "Steel", "Ghost"]
+            },
+            "defending": {
+                "weak_against": ["Fighting"],
+                "resistant_against": ["Ghost"]
+            }
+        },
+        {
             "name": "Fire",
             "attacking": {
                 "super_effective_against": ["Grass", "Ice", "Bug", "Steel"],

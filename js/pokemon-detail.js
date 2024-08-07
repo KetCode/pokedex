@@ -217,6 +217,10 @@ function displayEvolutions(evolutions) {
             textContent: evolutionName,
         });
 
+        evolutionDiv.addEventListener("click", () => {
+            window.location.assign(`./detail.html?id=${evolutionId}`);
+        });
+
         if (evolutions.evolves_to.length > 0) {
             const nextEvolution = evolutions.evolves_to[0];
 

@@ -488,7 +488,7 @@
 .evolution img {
     max-width: 6rem;
     height: 6rem;
-    margin: 10px;
+    margin: .65rem;
 }
 
 .evolution p {
@@ -514,5 +514,18 @@
     }
     .header {
         width: 98%;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .evolutions-wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .evolutions-wrapper .arrow {
+        margin: .75rem;
+        transform: rotate(90deg);
     }
 }

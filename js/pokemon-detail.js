@@ -229,6 +229,7 @@ function displayEvolutions(evolutions, parentDiv) {
             if (!isLastEvolution) {
                 const arrowIcon = document.createElement("img");
                 arrowIcon.src = "./assets/arrow-right.svg";
+                arrowIcon.className = "arrow";
                 arrowIcon.alt = "Arrow";
                 evolutionsWrapper.appendChild(arrowIcon);
             }
@@ -252,6 +253,7 @@ function displayEvolutions(evolutions, parentDiv) {
             if (!isLastEvolution) {
                 const arrowIcon = document.createElement("img");
                 arrowIcon.src = "./assets/arrow-right.svg";
+                arrowIcon.className = "arrow";
                 arrowIcon.alt = "Arrow";
                 evolutionsWrapper.appendChild(arrowIcon);
             }

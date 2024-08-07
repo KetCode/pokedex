@@ -32,6 +32,8 @@ async function loadPokemon(id) {
             // window.history.pushState({}, "", `.detail.html?id=${id}`);
         }
 
+        getEvolutions(pokemonSpecies);
+
         return true;
     }
     catch (error) {
@@ -181,5 +183,55 @@ function getEnglishFlavorText(pokemonSpecies) {
     }
     return "";
 }
+
+function getEvolutions(pokemonSpecies) {
+    const evolutionChainUrl = pokemonSpecies.evolution_chain.url;
+     fetch(evolutionChainUrl)
+    .then(response => response.json())
+    .then(data => {
+      const evolutions = data.chain;
+      displayEvolutions(evolutions);
+    })
+    .catch(error => console.error(error));
+}
+function displayEvolutions(evolutions) {
+    const evolutionsWrapper = document.querySelector(".evolutions-wrapper");
+    evolutionsWrapper.innerHTML = "";
+    let isLastEvolution = false;
+  
+    while (evolutions && !isLastEvolution) {
+      const evolution = evolutions.species;
+      const evolutionName = evolution.name;
+      const evolutionId = evolution.url.split("/").slice(-2, -1)[0];
+  
+      const evolutionDiv = document.createElement("div");
+      evolutionDiv.className = "evolution";
+      evolutionsWrapper.appendChild(evolutionDiv);
+  
+      createAndAppendElement(evolutionDiv, "img", {
+        src: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${evolutionId}.svg`,
+        alt: evolutionName,
+      });
+
+      createAndAppendElement(evolutionDiv, "p", {
+        textContent: evolutionName,
+      });
+
+      if (evolutions.evolves_to.length > 0) {
+        const nextEvolution = evolutions.evolves_to[0];
+
+        if (!isLastEvolution) {
+            const arrowIcon = document.createElement("img");
+            arrowIcon.src = "./assets/arrow-right.svg";
+            arrowIcon.alt = "Arrow";
+            evolutionsWrapper.appendChild(arrowIcon);
+        }
+
+        evolutions = nextEvolution;
+    } else {
+        isLastEvolution = true;
+    }
+    }
+  }
 
 console.log(warningMessages);

@@ -42,20 +42,6 @@ async function loadPokemon(id) {
     }
 }
 
-function setElementStyles(elements, cssProperty, value) {
-    elements.forEach(element => {
-        element.style[cssProperty] = value;
-    });
-}
-
-function rgbaFromHex(hexColor) {
-    return [
-        parseInt(hexColor.slice(1, 3), 16),
-        parseInt(hexColor.slice(3, 5), 16),
-        parseInt(hexColor.slice(5, 7), 16)
-    ].join(", ");
-}
-
 function setTypeBackgroundColor(poke) {
     const mainType = poke.types[0].type.name;
     const color = getComputedStyle(document.documentElement).getPropertyValue(`--${mainType}`);
@@ -88,25 +74,9 @@ function setTypeBackgroundColor(poke) {
     document.head.appendChild(styleTag);
 }
 
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-}
-
-function createAndAppendElement(parent, tag, options = {}) {
-    const element = document.createElement(tag);
-
-    Object.keys(options).forEach((key) => {
-        element[key] = options[key];
-    });
-
-    parent.appendChild(element);
-
-    return element
-}
-
 function displayPokemonDetails(poke) {
     const { name, id, types, weight, height, abilities, stats } = poke;
-    const capitalizePokemonName = capitalizeFirstLetter(name);
+    const capitalizePokemonName = capitalize(name);
 
     const detailMainElement = document.querySelector(".detail-main");
     detailMainElement.classList.add(name.toLowerCase());
@@ -184,17 +154,7 @@ function getEnglishFlavorText(pokemonSpecies) {
     return "";
 }
 
-function getEvolutions(pokemonSpecies) {
-    const evolutionChainUrl = pokemonSpecies.evolution_chain.url;
-    fetch(evolutionChainUrl)
-        .then(response => response.json())
-        .then(data => {
-            const evolutions = data.chain;
-            displayEvolutions(evolutions);
-        })
-        .catch(error => console.error(error));
-}
-function displayEvolutions(evolutions, parentDiv) {
+function displayEvolutions(evolutions) {
     const evolutionsWrapper = document.querySelector(".evolutions-wrapper");
     evolutionsWrapper.innerHTML = "";
     let isLastEvolution = false;
@@ -218,7 +178,7 @@ function displayEvolutions(evolutions, parentDiv) {
         });
 
         createAndAppendElement(evolutionDiv, "p", {
-            textContent: evolutionName,
+            textContent: capitalize(evolutionName),
         });
 
         evolutionDiv.addEventListener("click", () => {

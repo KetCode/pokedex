@@ -194,19 +194,23 @@ function getEvolutions(pokemonSpecies) {
         })
         .catch(error => console.error(error));
 }
-function displayEvolutions(evolutions) {
+function displayEvolutions(evolutions, parentDiv) {
     const evolutionsWrapper = document.querySelector(".evolutions-wrapper");
     evolutionsWrapper.innerHTML = "";
     let isLastEvolution = false;
 
-    while (evolutions && !isLastEvolution) {
+    function recursiveDisplayEvolutions(evolutions, parentDiv) {
+        if (!evolutions) return;
+        
         const evolution = evolutions.species;
         const evolutionName = evolution.name;
         const evolutionId = evolution.url.split("/").slice(-2, -1)[0];
 
+        if (evolutionId > 649) return
+
         const evolutionDiv = document.createElement("div");
         evolutionDiv.className = "evolution";
-        evolutionsWrapper.appendChild(evolutionDiv);
+        parentDiv.appendChild(evolutionDiv);
 
         createAndAppendElement(evolutionDiv, "img", {
             src: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${evolutionId}.svg`,
@@ -221,7 +225,28 @@ function displayEvolutions(evolutions) {
             window.location.assign(`./detail.html?id=${evolutionId}`);
         });
 
-        if (evolutions.evolves_to.length > 0) {
+        if (evolutions.evolves_to.length > 1) {
+            if (!isLastEvolution) {
+                const arrowIcon = document.createElement("img");
+                arrowIcon.src = "./assets/arrow-right.svg";
+                arrowIcon.alt = "Arrow";
+                evolutionsWrapper.appendChild(arrowIcon);
+            }
+
+            const evolutionsList = document.createElement("div");
+            evolutionsList.className = "evolutions-list";
+            evolutionsWrapper.appendChild(evolutionsList);
+
+            evolutions.evolves_to.forEach((evolution) => {
+                const evolutionDiv = document.createElement("div");
+                evolutionDiv.className = "evolution";
+                evolutionsList.appendChild(evolutionDiv);
+                
+                recursiveDisplayEvolutions(evolution, evolutionsList);
+            });
+
+            isLastEvolution = true;
+        } else if (evolutions.evolves_to.length === 1) {
             const nextEvolution = evolutions.evolves_to[0];
 
             if (!isLastEvolution) {
@@ -231,11 +256,12 @@ function displayEvolutions(evolutions) {
                 evolutionsWrapper.appendChild(arrowIcon);
             }
 
-            evolutions = nextEvolution;
+            recursiveDisplayEvolutions(nextEvolution, parentDiv);
         } else {
             isLastEvolution = true;
         }
     }
+    recursiveDisplayEvolutions(evolutions, evolutionsWrapper);
 }
 
 console.log(warningMessages);

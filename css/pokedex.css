@@ -469,6 +469,35 @@
     background-color: transparent;
 }
 
+.evolutions-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.evolution {
+    flex: 1;
+    position: relative;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.evolution:hover {
+    transform: scale(1.1);s
+}
+
+.evolution img {
+    max-width: 6rem;
+    height: 6rem;
+    margin: 10px;
+}
+
+.evolution p {
+    color: var(--grayscale-medium);
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin: .5rem;
+}
+
 @media screen and (min-width: 650px) {
     .detail-main .header-wrapper {
         width: 38rem;

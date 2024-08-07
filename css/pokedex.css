@@ -498,6 +498,10 @@
     margin: .5rem;
 }
 
+.evolutions-list {
+    flex: 1;
+}
+
 @media screen and (min-width: 650px) {
     .detail-main .header-wrapper {
         width: 38rem;

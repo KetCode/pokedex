@@ -50,8 +50,8 @@ function setElementStyles(elements, cssProperty, value) {
 
 function rgbaFromHex(hexColor) {
     return [
-        parseInt(hexColor.slice(1, 3), 16), 
-        parseInt(hexColor.slice(3, 5), 16), 
+        parseInt(hexColor.slice(1, 3), 16),
+        parseInt(hexColor.slice(3, 5), 16),
         parseInt(hexColor.slice(5, 7), 16)
     ].join(", ");
 }
@@ -61,7 +61,7 @@ function setTypeBackgroundColor(poke) {
     const color = getComputedStyle(document.documentElement).getPropertyValue(`--${mainType}`);
     warningMessages.push(getComputedStyle(document.documentElement).getPropertyValue(`--${mainType}`));
 
-    if(!color) {
+    if (!color) {
         console.warn(`Cor náo definida por tipo: ${mainType}`);
         return;
     }
@@ -89,7 +89,7 @@ function setTypeBackgroundColor(poke) {
 }
 
 function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }
 
 function createAndAppendElement(parent, tag, options = {}) {
@@ -100,19 +100,19 @@ function createAndAppendElement(parent, tag, options = {}) {
     });
 
     parent.appendChild(element);
-    
+
     return element
 }
 
 function displayPokemonDetails(poke) {
-    const {name, id, types, weight, height, abilities, stats} = poke;
+    const { name, id, types, weight, height, abilities, stats } = poke;
     const capitalizePokemonName = capitalizeFirstLetter(name);
 
     const detailMainElement = document.querySelector(".detail-main");
     detailMainElement.classList.add(name.toLowerCase());
 
     document.querySelector(".name").textContent = capitalizePokemonName;
-    
+
     document.querySelector(".pokemon-id").textContent = `#${String(id).padStart(3, "0")}`;
 
     const imageElement = document.querySelector(".detail-img img");
@@ -121,7 +121,7 @@ function displayPokemonDetails(poke) {
 
     const typeWrapper = document.querySelector(".power");
     typeWrapper.innerHTML = "";
-    types.forEach(({type}) => {
+    types.forEach(({ type }) => {
         createAndAppendElement(typeWrapper, "p", {
             className: `body3-fonts type ${type.name}`,
             textContent: type.name,
@@ -132,7 +132,7 @@ function displayPokemonDetails(poke) {
     document.querySelector(".pokemon-detail-wrap .pokemon-detail p.body3-fonts.height").textContent = `${height / 10} m`;
 
     const abilitiesWrapper = document.querySelector(".pokemon-detail-wrap .pokemon-detail.move");
-    abilities.forEach(({ability}) => {
+    abilities.forEach(({ ability }) => {
         createAndAppendElement(abilitiesWrapper, "p", {
             className: "body3-fonts",
             textContent: ability.name,
@@ -151,7 +151,7 @@ function displayPokemonDetails(poke) {
         speed: "SPD",
     }
 
-    stats.forEach(({stat, base_stat}) => {
+    stats.forEach(({ stat, base_stat }) => {
         const statDiv = document.createElement("div");
         statDiv.className = "stats-wrap";
         statsWrapper.appendChild(statDiv);
@@ -166,7 +166,7 @@ function displayPokemonDetails(poke) {
         });
         createAndAppendElement(statDiv, "progress", {
             className: "progress-bar",
-            value: base_stat, 
+            value: base_stat,
             max: 100,
         });
     });
@@ -175,8 +175,8 @@ function displayPokemonDetails(poke) {
 }
 
 function getEnglishFlavorText(pokemonSpecies) {
-    for(let entry of pokemonSpecies.flavor_text_entries) {
-        if(entry.language.name === "en") {
+    for (let entry of pokemonSpecies.flavor_text_entries) {
+        if (entry.language.name === "en") {
             let flavor = entry.flavor_text.replace(/\f/g, " ");
             return flavor;
         }
@@ -186,52 +186,52 @@ function getEnglishFlavorText(pokemonSpecies) {
 
 function getEvolutions(pokemonSpecies) {
     const evolutionChainUrl = pokemonSpecies.evolution_chain.url;
-     fetch(evolutionChainUrl)
-    .then(response => response.json())
-    .then(data => {
-      const evolutions = data.chain;
-      displayEvolutions(evolutions);
-    })
-    .catch(error => console.error(error));
+    fetch(evolutionChainUrl)
+        .then(response => response.json())
+        .then(data => {
+            const evolutions = data.chain;
+            displayEvolutions(evolutions);
+        })
+        .catch(error => console.error(error));
 }
 function displayEvolutions(evolutions) {
     const evolutionsWrapper = document.querySelector(".evolutions-wrapper");
     evolutionsWrapper.innerHTML = "";
     let isLastEvolution = false;
-  
+
     while (evolutions && !isLastEvolution) {
-      const evolution = evolutions.species;
-      const evolutionName = evolution.name;
-      const evolutionId = evolution.url.split("/").slice(-2, -1)[0];
-  
-      const evolutionDiv = document.createElement("div");
-      evolutionDiv.className = "evolution";
-      evolutionsWrapper.appendChild(evolutionDiv);
-  
-      createAndAppendElement(evolutionDiv, "img", {
-        src: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${evolutionId}.svg`,
-        alt: evolutionName,
-      });
+        const evolution = evolutions.species;
+        const evolutionName = evolution.name;
+        const evolutionId = evolution.url.split("/").slice(-2, -1)[0];
 
-      createAndAppendElement(evolutionDiv, "p", {
-        textContent: evolutionName,
-      });
+        const evolutionDiv = document.createElement("div");
+        evolutionDiv.className = "evolution";
+        evolutionsWrapper.appendChild(evolutionDiv);
 
-      if (evolutions.evolves_to.length > 0) {
-        const nextEvolution = evolutions.evolves_to[0];
+        createAndAppendElement(evolutionDiv, "img", {
+            src: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${evolutionId}.svg`,
+            alt: evolutionName,
+        });
 
-        if (!isLastEvolution) {
-            const arrowIcon = document.createElement("img");
-            arrowIcon.src = "./assets/arrow-right.svg";
-            arrowIcon.alt = "Arrow";
-            evolutionsWrapper.appendChild(arrowIcon);
+        createAndAppendElement(evolutionDiv, "p", {
+            textContent: evolutionName,
+        });
+
+        if (evolutions.evolves_to.length > 0) {
+            const nextEvolution = evolutions.evolves_to[0];
+
+            if (!isLastEvolution) {
+                const arrowIcon = document.createElement("img");
+                arrowIcon.src = "./assets/arrow-right.svg";
+                arrowIcon.alt = "Arrow";
+                evolutionsWrapper.appendChild(arrowIcon);
+            }
+
+            evolutions = nextEvolution;
+        } else {
+            isLastEvolution = true;
         }
-
-        evolutions = nextEvolution;
-    } else {
-        isLastEvolution = true;
     }
-    }
-  }
+}
 
 console.log(warningMessages);

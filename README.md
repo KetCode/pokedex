@@ -46,7 +46,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [x] Tela de detalhes de cada pokemon
 - [x] Utilizar a api
 - [x] Ter um campo para pesquisar os pokemons
-- [x] Fazer a pesquisa em tempo real com uma lista de sugestões dos nomes de pokemons 
+- [x] Fazer a pesquisa em tempo real com uma lista de sugestões dos nomes de pokemons
+- [x] Colocar as evoluções dos pokemons na tela de detalhes
+- [ ] Colocar as fraquezas dos pokemons na tela de detalhes
 
 ### 📜 Licença
 

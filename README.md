@@ -60,4 +60,4 @@ Para conseguir visualizar a pagina é necessário utilizar a extensão "live ser
 
 ---
 
-Projeto feito através de uma aula da rocketseat. Alterado e adicionado algumas funcionalidades por KetCode.
+Projeto feito através de um bootcamp. Alterado e adicionado algumas funcionalidades por KetCode.

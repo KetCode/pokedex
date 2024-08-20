@@ -39,6 +39,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - CSS
 - Javascript
 - Git e Github
+- Netlify
 
 ### 🚧 Features
 
